@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import LitButton from './components/Button';
+import {LitButton} from './components';
 
 export default {
   name: 'App',

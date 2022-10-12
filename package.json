@@ -2,11 +2,20 @@
   "name": "lit-vue-ui",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/litvue.umd.js",
+  "module": "dist/litvue.umd.js",
+  "unpkg": "dist/litvue.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name litvue src/entry-lib.js",
     "lint": "vue-cli-service lint"
   },
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
