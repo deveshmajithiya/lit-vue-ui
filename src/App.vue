@@ -1,6 +1,38 @@
 <template>
-  <div id="app">
-    <LitButton>Lit Button</LitButton>
+  <div id="app" class="container">
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="primary" size="large" rounded>Primary Large</LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="primary" size="medium" rounded>Primary Medium</LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="primary" size="small" rounded>Primary small</LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="secondary" size="large" rounded>Secondary Large</LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="secondary" size="medium" rounded>Secondary Medium</LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
+    </div>
+    <div class="items">
+      <LitButton loading="true" @click="litButtonClick" variant="primary" size="small" rounded>Secondary small</LitButton>
+    </div>
+    <div class="items">
+      <LitButton loading="true" @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
+    </div>
+    <div class="items">
+      <LitButton color="blue"  @click="litButtonClick" size="small" rounded>Color</LitButton>
+    </div>
+    <div class="items">
+      <LitButton color="blue" bordered  @click="litButtonClick" size="small" rounded>Color Bordered</LitButton>
+    </div>
+    <div class="items">
+      <LitButton disabled @click="litButtonClick" variant="primary" size="small" rounded>Disabled</LitButton>
+    </div>
   </div>
 </template>
 
@@ -11,6 +43,11 @@ export default {
   name: 'App',
   components: {
     LitButton
+  },
+  methods:{
+    litButtonClick(){
+      console.log("lit button click");
+    }
   }
 }
 </script>
@@ -23,5 +60,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+</style>
+
+<style lang="scss" scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.items{
+  margin-top: 20px;
 }
 </style>
