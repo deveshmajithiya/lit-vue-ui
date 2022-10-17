@@ -1,14 +1,31 @@
 <template>
-  <button :disabled="disabled" :style="btnStyles" v-on="$listeners" class="lit-button" :class="classObject">
+  <button
+    :disabled="disabled"
+    :style="btnStyles"
+    v-on="$listeners"
+    class="lit-button"
+    :class="classObject"
+  >
     <div class="wrapper" v-show="!loading">
+      <span class="icon-left" v-show="icon">
+        <v-icon :name="icon" />
+      </span>
       <slot></slot>
+      <span class="icon-right" v-show="iconRight">
+        <v-icon :name="iconRight" />
+      </span>
     </div>
     <img class="loader" v-show="loading" :src="getLoader" />
   </button>
 </template>
 <script>
+import "vue-awesome/icons";
+import Icon from "vue-awesome/components/Icon";
 export default {
   name: "lit-button",
+  components: {
+    "v-icon": Icon,
+  },
   props: {
     variant: {
       type: String,
@@ -33,10 +50,16 @@ export default {
       type: Boolean,
       default: false,
     },
-    bordered:{
+    bordered: {
       type: Boolean,
       default: false,
-    }
+    },
+    icon: {
+      type: String,
+    },
+    iconRight: {
+      type: String,
+    },
   },
   computed: {
     classObject() {
@@ -50,18 +73,17 @@ export default {
         disabled: this.disabled
       };
     },
-    btnStyles(){
-      if(this.color && this.bordered){
-        return{
+    btnStyles() {
+      if (this.color && this.bordered) {
+        return {
           color: this.color,
-          background: 'white',
-          border: `2px solid ${this.color}`
-        }
-      }
-      else{
-        return{
-          background:this.color
-        }
+          background: "white",
+          border: `2px solid ${this.color}`,
+        };
+      } else {
+        return {
+          background: this.color,
+        };
       }
     },
     getLoader() {
@@ -78,7 +100,7 @@ export default {
 .lit-button {
   box-sizing: content-box;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   border: none;
   color: white;
   height: 40px;
@@ -88,11 +110,17 @@ export default {
   &.primary {
     background: #e30513;
     color: white;
+    .icon-left, .icon-right{
+      fill: white;
+    }
   }
   &.secondary {
     background: white;
     border: 2px solid #cc9017;
     color: #cc9017;
+    .icon-left, .icon-right{
+      fill: #cc9017;
+    }
   }
   &.rounded {
     border-radius: 20px;
@@ -112,14 +140,20 @@ export default {
     font-size: 14px;
     font-weight: 700;
   }
-  &.disabled{
+  &.disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
   .wrapper {
     width: 100%;
-    > * {
-      display: block;
+    position: relative;
+    .icon-left{
+      position: absolute;
+      left: 0;
+    }
+    .icon-right{
+      position: absolute;
+      right: 0;
     }
   }
   .loader {

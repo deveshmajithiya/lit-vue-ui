@@ -1,55 +1,119 @@
 <template>
   <div id="app" class="container">
     <div class="items">
-      <LitButton @click="litButtonClick" variant="primary" size="large" rounded>Primary Large</LitButton>
+      <LitButton @click="litButtonClick" variant="primary" size="large" rounded
+        >Primary Large</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton @click="litButtonClick" variant="primary" size="medium" rounded>Primary Medium</LitButton>
+      <LitButton @click="litButtonClick" variant="primary" size="medium" rounded
+        >Primary Medium</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton @click="litButtonClick" variant="primary" size="small" rounded>Primary small</LitButton>
+      <LitButton @click="litButtonClick" variant="primary" size="small" rounded
+        >Primary small</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton @click="litButtonClick" variant="secondary" size="large" rounded>Secondary Large</LitButton>
+      <LitButton
+        @click="litButtonClick"
+        variant="secondary"
+        size="large"
+        rounded
+        >Secondary Large</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton @click="litButtonClick" variant="secondary" size="medium" rounded>Secondary Medium</LitButton>
+      <LitButton
+        @click="litButtonClick"
+        variant="secondary"
+        size="medium"
+        rounded
+        >Secondary Medium</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
+      <LitButton
+        @click="litButtonClick"
+        variant="secondary"
+        size="small"
+        rounded
+        >Secondary small</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton loading @click="litButtonClick" variant="primary" size="small" rounded>Secondary small</LitButton>
+      <LitButton
+        loading
+        @click="litButtonClick"
+        variant="primary"
+        size="small"
+        rounded
+        >Secondary small</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton loading @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
+      <LitButton
+        loading
+        @click="litButtonClick"
+        variant="secondary"
+        size="small"
+        rounded
+        >Secondary small</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton color="blue"  @click="litButtonClick" size="small" rounded>Color</LitButton>
+      <LitButton color="blue" @click="litButtonClick" size="small" rounded
+        >Color</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton color="blue" bordered  @click="litButtonClick" size="small" rounded>Color Bordered</LitButton>
+      <LitButton
+        color="blue"
+        bordered
+        @click="litButtonClick"
+        size="small"
+        rounded
+        >Color Bordered</LitButton
+      >
     </div>
     <div class="items">
-      <LitButton disabled @click="litButtonClick" variant="primary" size="small" rounded>Disabled</LitButton>
+      <LitButton
+        disabled
+        @click="litButtonClick"
+        variant="primary"
+        size="small"
+        rounded
+        >Disabled</LitButton
+      >
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="primary" size="small" icon="search" rounded>
+        Search 
+      </LitButton>
+    </div>
+    <div class="items">
+      <LitButton @click="litButtonClick" variant="secondary" size="small" icon-right="user" rounded>
+        User 
+      </LitButton>
     </div>
   </div>
 </template>
 
 <script>
-import {LitButton} from './components';
+import { LitButton } from "./components";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     LitButton
   },
-  methods:{
-    litButtonClick(){
+  methods: {
+    litButtonClick() {
       console.log("lit button click");
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
@@ -64,13 +128,13 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-.items{
+.items {
   margin-top: 20px;
 }
 </style>
