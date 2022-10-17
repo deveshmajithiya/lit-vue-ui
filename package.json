@@ -9,7 +9,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build-bundle": "vue-cli-service build --target lib --name litvue src/entry-lib.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist",
@@ -21,14 +23,29 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/testing-library": "0.0.13",
+    "@storybook/vue": "^6.5.12",
     "@vue/cli-plugin-babel": "~4.2.2",
     "@vue/cli-plugin-eslint": "~4.2.2",
     "@vue/cli-service": "~4.2.2",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^5.2.7",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "node-sass": "^7.0.3",
-    "sass-loader": "^10",
+    "sass": "^1.55.0",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "vue-loader": "^15.10.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -19,10 +19,10 @@
       <LitButton @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
     </div>
     <div class="items">
-      <LitButton loading="true" @click="litButtonClick" variant="primary" size="small" rounded>Secondary small</LitButton>
+      <LitButton loading @click="litButtonClick" variant="primary" size="small" rounded>Secondary small</LitButton>
     </div>
     <div class="items">
-      <LitButton loading="true" @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
+      <LitButton loading @click="litButtonClick" variant="secondary" size="small" rounded>Secondary small</LitButton>
     </div>
     <div class="items">
       <LitButton color="blue"  @click="litButtonClick" size="small" rounded>Color</LitButton>
